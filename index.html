@@ -10,10 +10,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     /* Body Styling */
+
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom, #6a11cb, #2575fc);
-      color: #ffffff;
+      background: url(https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center; /* Update with your image */
+      background-size: cover;
       min-height: 100vh;
       margin: 0;
       display: flex;
@@ -23,13 +24,15 @@
 
     /* Card Design */
     .card {
-      background-color: #ffffff;
+      background-color: white;
+      opacity: 0.7;
       color: #333;
       border-radius: 15px;
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
       padding: 20px;
       width: 100%;
       max-width: 500px;
+      border: 5px solid black;
     }
 
     /* Title Styling */
@@ -56,12 +59,16 @@
     }
 
     .btn-primary {
-      background-color: #6a11cb;
-      border-color: #6a11cb;
+      background-color: rgb(27, 4, 4);
+      opacity: 0.8;
+      border-color: gray;
     }
 
     .btn-primary:hover {
-      background-color: #5a0fb2;
+      background-color: #cac7ce;
+      color: black;
+      font-size: large;
+      font-weight:bolder;
     }
 
     .btn-success:hover {
@@ -76,7 +83,7 @@
     .list-group-item {
       border: none;
       background-color: #f8f9fa;
-      color: #333;
+      color: black;
       border-radius: 8px;
       margin-bottom: 10px;
       padding: 10px 15px;
