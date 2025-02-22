@@ -1,75 +1,68 @@
 # To-Do List Manager
 
-## 📌 Project Overview
-The **To-Do List Manager** is a full-stack web application designed to help users efficiently manage their daily tasks. This project includes a **frontend**, a **Node.js backend**, and an **SQLite database** for persistent storage.
+## Overview
+The To-Do List Manager is a full-stack web application designed to help users efficiently manage their daily tasks. Users can register, log in, add tasks, mark them as completed, filter tasks by date, and delete tasks. The application ensures persistent storage through a backend powered by Node.js and an SQLite database.
 
-## 🛠️ Tech Stack
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Node.js + Express.js
-- **Database:** SQLite
+## Features
+- User authentication (registration and login)
+- Task management (add, view, mark as complete, delete)
+- Persistent data storage using SQLite
+- Task filtering by due date
+- Responsive UI with Bootstrap
+- Secure API communication using JWT authentication
+- Backend integration with Express.js for handling API requests
 
-## 🚀 Features
-- **User Authentication** (Register/Login)
-- **CRUD Operations for Tasks** (Create, Read, Update, Delete)
-- **Task Filtering** (By Date and Completion Status)
-- **Responsive UI** (Works on all devices)
+## Technologies Used
+### Frontend
+- HTML, CSS, JavaScript
+- Bootstrap for responsive design
 
----
+### Backend
+- Node.js (Express.js)
+- SQLite (Database)
+- bcrypt (Password hashing)
+- jsonwebtoken (JWT authentication)
 
-## ⚙️ Installation Guide
+## Installation Guide
+### Prerequisites
+Ensure you have the following installed on your system:
+- Node.js (Download from https://nodejs.org/)
+- SQLite (Download from https://sqlite.org/download.html)
 
-### 1️⃣ Clone the Repository
+### Steps to Set Up
+#### 1. Clone the Repository
 ```sh
 git clone https://github.com/mayureshchaturvedi/To-Do-List-Manager.git
 cd To-Do-List-Manager
 ```
 
-### 2️⃣ Install Dependencies
-#### Backend Setup
+#### 2. Install Dependencies
 ```sh
-cd backend
 npm install
 ```
-#### Frontend Setup
-No additional setup required. You can directly open `index.html` in a browser.
 
-### 3️⃣ Initialize the Database
-```sh
-node setupDatabase.js
+#### 3. Set Up Environment Variables
+Create a `.env` file in the project root and add the following:
 ```
-(This will create the SQLite database and necessary tables.)
-
-### 4️⃣ Start the Backend Server
+PORT=5000
+SECRET_KEY="mayuresh"
+```
+#### 5. Start the Backend Server
 ```sh
 node server.js
 ```
-(Default port: `http://localhost:5000`)
+The server will start at `http://localhost:5000`.
 
-### 5️⃣ Run the Frontend
-Open `index.html` in a browser or use a local server:
-```sh
-npx serve .
-```
+#### 6. Open the Frontend
+Simply open `index.html` in a browser to access the application.
 
----
+## API Endpoints
+### Authentication
+- **POST** `/register` - Register a new user
+- **POST** `/login` - Authenticate user and receive JWT token
 
-## 🔥 API Endpoints
-| Method | Endpoint | Description |
-|--------|---------|-------------|
-| POST | `/register` | Register a new user |
-| POST | `/login` | Authenticate user |
-| GET | `/tasks` | Fetch all tasks for logged-in user |
-| POST | `/tasks` | Add a new task |
-| PUT | `/tasks/:id` | Update a task |
-| DELETE | `/tasks/:id` | Delete a task |
-
----
-
-## 🤝 Contributing
-Contributions are welcome! Please follow the standard GitHub workflow:
-1. Fork the repository
-2. Create a new branch (`feature-branch`)
-3. Commit changes and push to GitHub
-4. Open a Pull Request
-
----
+### Task Management (Requires Authentication)
+- **GET** `/tasks` - Retrieve tasks
+- **POST** `/tasks` - Add a new task
+- **PUT** `/tasks/:id` - Mark a task as completed
+- **DELETE** `/tasks/:id` - Delete a task
